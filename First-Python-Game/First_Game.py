@@ -8,6 +8,15 @@
 # player_heal = 16
 # health = 100
 
-player = ["Robert", 10, 16, 100]
+#List?
+# player = ["Robert", 10, 16, 100]
 
-print(player[2])
+#Dictionary?
+player = {'name': 'Robert', 'attack': 10, 'heal': 16, 'health': 100}
+monster = {'name': 'Chuthlu', 'attack': 12, 'health': 150}'}
+
+print("Please select action")
+print("1) Attack")
+print("2) Heal")
+
+input()
