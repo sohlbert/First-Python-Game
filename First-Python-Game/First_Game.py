@@ -1,10 +1,12 @@
 #Making a game
+from random import randint
+
 game_running = True
 
 while game_running == True:
     new_round = True
     player = {'name': 'Robert', 'attack': 10, 'heal': 16, 'health': 100}
-    monster = {'name': 'Chuthlu', 'attack': 12, 'health': 120}
+    monster = {'name': 'Chuthlu', 'attack_min': 10, 'attack_max': 20, 'health': 120}
     
     print('***' *7)
     print('Enter Player Name')
@@ -32,16 +34,19 @@ while game_running == True:
                 player_won = True
 
             else:
-                player['health'] = player['health'] - monster['attack']
+                monster_attack = randint(monster['attack_min'], monster['attack_max'])
+                player['health'] = player['health'] - monster_attack
                 if player['health'] <= 0:
                     monster_won = True
 
         elif player_choice == '2':
             player['health'] = player['health'] + player['heal']
-            player['health'] = player['health'] - monster['attack']
+            monster_attack = randint(monster['attack_min'], monster['attack_max'])
+            player['health'] = player['health'] - monster_attack
+
             if player['health'] <= 0:
                monster_won = True
-               
+
         elif player_choice == '3':
             new_round = False
             game_running = False
@@ -51,7 +56,7 @@ while game_running == True:
 
         if player_won == False and monster_won == False:
             print(player['name'] + ' has ' + str(player['health']) + ' left')
-            print(monster['name'] + 'has ' + str(monster['health']) + ' left')
+            print(monster['name'] + ' has ' + str(monster['health']) + ' left')
 
         elif player_won:
             print(player['name'] + ' won ')
@@ -60,3 +65,6 @@ while game_running == True:
         elif monster_won:
             print('The Monster has won, try again!')
             new_round = False
+
+def calculate_monster_attack():
+    randint(monster['attack_min'], monster['attack_max'])
