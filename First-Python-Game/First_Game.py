@@ -10,19 +10,17 @@ while game_running == True:
     print('Enter Player Name')
     player['name'] = input()
 
+    print(player['name'] + ' has ' + str(player['health']) + 'HP')
+    
     while new_round == True:
 
         player_won = False
         monster_won = False
 
         print('***' *7)
-        print('***' *7)
-        print('***' *7)
         print("1) Attack")
         print("2) Heal")
         print('3) Exit Game')
-        print('***' *7)
-        print('***' *7)
         print('***' *7)
 
         player_choice = input()
