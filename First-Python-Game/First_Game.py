@@ -5,6 +5,8 @@ game_running = True
 
 def calculate_monster_attack():
     return randint(monster['attack_min'], monster['attack_max'])
+def game_ends(winner_name):
+    print(f'{winner_name} won the game')
 
 while game_running == True:
     new_round = True
@@ -61,9 +63,9 @@ while game_running == True:
             print(monster['name'] + ' has ' + str(monster['health']) + ' left')
 
         elif player_won:
-            print(player['name'] + ' won ')
+            game_ends(player['name'])
             new_round = False
 
         elif monster_won:
-            print('The Monster has won, try again!')
+            game_ends(monster['name'])
             new_round = False
