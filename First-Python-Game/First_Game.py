@@ -15,14 +15,21 @@ while game_running == True:
 
     if player_choice == '1':
         monster['health'] = monster['health'] - player['attack']
-        player['health'] = player['health'] - monster['attack']
+        if monster['health'] <=0:
+            pass
+
+        else
+            player['health'] = player['health'] - monster['attack']
+            if player['health'] <= 0:
+                pass
+               
         print(monster['health'])
         print(player['health'])
-
 
     elif player_choice == '2':
         print("Healing")
     else:
         print('Invalid Input')
+
     if player['health'] <= 0:
             game_running = False
