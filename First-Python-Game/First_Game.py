@@ -3,6 +3,9 @@ from random import randint
 
 game_running = True
 
+def calculate_monster_attack():
+    return randint(monster['attack_min'], monster['attack_max'])
+
 while game_running == True:
     new_round = True
     player = {'name': 'Robert', 'attack': 10, 'heal': 16, 'health': 100}
@@ -34,8 +37,7 @@ while game_running == True:
                 player_won = True
 
             else:
-                monster_attack = randint(monster['attack_min'], monster['attack_max'])
-                player['health'] = player['health'] - monster_attack
+                player['health'] = player['health'] - calculate_monster_attack()
                 if player['health'] <= 0:
                     monster_won = True
 
@@ -65,6 +67,3 @@ while game_running == True:
         elif monster_won:
             print('The Monster has won, try again!')
             new_round = False
-
-def calculate_monster_attack():
-    randint(monster['attack_min'], monster['attack_max'])
