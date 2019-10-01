@@ -59,7 +59,9 @@ while game_running == True:
             game_running = False
         
         elif player_choice == '4':
-            print(game_results)
+            for result in game_results:
+                print(result)
+        
 
         else:
             print('Invalid Input')
